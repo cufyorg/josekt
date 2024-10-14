@@ -1,0 +1,8 @@
+[versions]
+kotlin = "2.0.0"
+
+[libraries]
+kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.7.1" }
+kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = "0.6.0" }
+
+brianCampbell-jose4j = { module = "org.bitbucket.b_c:jose4j", version = "0.9.6" }
