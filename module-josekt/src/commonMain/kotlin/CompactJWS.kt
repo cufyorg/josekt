@@ -15,11 +15,11 @@
  */
 package org.cufy.jose
 
+import org.cufy.jose.internal.BASE_64_URL_SAFE_PRESENT_OPTIONAL
 import org.cufy.jose.internal.asJsonObjectOrNull
 import org.cufy.jose.internal.decodeJsonOrNull
 import kotlin.Result.Companion.failure
 import kotlin.Result.Companion.success
-import kotlin.io.encoding.Base64
 import kotlin.io.encoding.ExperimentalEncodingApi
 
 /* ============= ------------------ ============= */
@@ -67,7 +67,8 @@ data class CompactJWS(
      */
     @OptIn(ExperimentalEncodingApi::class)
     val decodedPayloadOrNull by lazy {
-        Base64.UrlSafe.decode(payload)
+        BASE_64_URL_SAFE_PRESENT_OPTIONAL
+            .decode(payload)
             .decodeToString()
             .decodeJsonOrNull()
             ?.asJsonObjectOrNull
